@@ -1,9 +1,9 @@
 const cacheName = "rakitsepeda.id-rakitspeda_platform-0.1.0";
 const contentToCache = [
-    "Build/Builds.loader.js",
-    "Build/Builds.framework.js.br",
-    "Build/Builds.data.br",
-    "Build/Builds.wasm.br",
+    "Build/Version-0.1.loader.js",
+    "Build/Version-0.1.framework.js",
+    "Build/Version-0.1.data",
+    "Build/Version-0.1.wasm",
     "TemplateData/style.css"
 
 ];
