@@ -85,7 +85,7 @@ loader.load(
         bikeModel.rotation.y = 180
 
         // Focus camera on the model
-        controls.target.set(bikeModel.position.x, bikeModel.position.y, bikeModel.position.z);
+        controls.target.set(bikeModel.position.x, bikeModel.position.y + 0.5, bikeModel.position.z);
         controls.update();
 
         // Adjust camera position relative to the model
