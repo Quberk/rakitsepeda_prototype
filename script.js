@@ -7,7 +7,7 @@ import { FBXLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/lo
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf0f0f0);
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -55,7 +55,7 @@ scene.add(directionalLight3);
 
 // --- Plane (Floor) ---
 const planeGeometry = new THREE.PlaneGeometry(200, 200);
-const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xA0522D }); // Sienna Brown
+const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x808080 });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial); 
 plane.rotation.x = - Math.PI / 2;
 plane.position.y = 0; // Adjust if your model's base isn't at y=0
@@ -82,18 +82,29 @@ loader.load(
 
         console.log("FBX model loaded successfully!");
 
+        bikeModel.rotation.y = 180
+
         // Focus camera on the model
         controls.target.set(bikeModel.position.x, bikeModel.position.y, bikeModel.position.z);
         controls.update();
 
         // Adjust camera position relative to the model
         camera.position.set(
-            bikeModel.position.x,
-            bikeModel.position.y + 0.5, // Slightly above the bike
-            bikeModel.position.z + 2    // Distance from the bike
+            -2.4161365560554855,
+            0.817079899845506,
+            2.7339832808122146
+            // bikeModel.position.x + 0.2,
+            // bikeModel.position.y + 3.5,
+            // bikeModel.position.z + 1.3
         );
-        camera.lookAt(controls.target);
-        bikeModel.rotation.y = 180
+        camera.rotation.set(
+            -0.2904111512698071,   // Nilai _x (radian)
+            -0.7025964578616679,   // Nilai _y (radian)
+            -0.19077549914824213,  // Nilai _z (radian)
+            'XYZ'                  // Nilai _order
+        );
+        console.log("Updated")
+        // camera.lookAt(controls.target);
 
     },
     function (xhr) {
@@ -126,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Animation Loop ---
 function animate() {
+    console.log("camera position: ", camera.position)
+    console.log("camera rotation: ", camera.rotation)
+
     requestAnimationFrame(animate);
     controls.update();
     renderer.render(scene, camera);
