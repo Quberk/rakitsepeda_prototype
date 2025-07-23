@@ -90,7 +90,7 @@ loader.load(
         camera.position.set(
             bikeModel.position.x,
             bikeModel.position.y + 0.5, // Slightly above the bike
-            bikeModel.position.z + 3    // Distance from the bike
+            bikeModel.position.z + 2    // Distance from the bike
         );
         camera.lookAt(controls.target);
         bikeModel.rotation.y = 180
