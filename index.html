@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -57,12 +57,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Version-0.1.loader.js";
+      var loaderUrl = buildUrl + "/Version-0.2.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Version-0.1.data",
-        frameworkUrl: buildUrl + "/Version-0.1.framework.js",
-        codeUrl: buildUrl + "/Version-0.1.wasm",
+        dataUrl: buildUrl + "/Version-0.2.data.br",
+        frameworkUrl: buildUrl + "/Version-0.2.framework.js.br",
+        codeUrl: buildUrl + "/Version-0.2.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "rakitsepeda.id",
         productName: "rakitspeda_platform",
